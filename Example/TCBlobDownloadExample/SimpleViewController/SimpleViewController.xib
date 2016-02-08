@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <deployment defaultVersion="1536" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SimpleViewController">
@@ -21,19 +23,16 @@
             <subviews>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="URL to download" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3">
                     <rect key="frame" x="20" y="77" width="280" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="280" id="VMX-Qb-awx"/>
+                        <constraint firstAttribute="height" constant="30" id="ogj-cB-Lmg"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="13">
                     <rect key="frame" x="20" y="115" width="128" height="44"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="128" id="0dH-dd-6MH"/>
-                        <constraint firstAttribute="height" constant="44" id="s6H-L9-8ri"/>
+                        <constraint firstAttribute="height" constant="44" id="bjD-UG-sE3"/>
                     </constraints>
                     <state key="normal" title="Add download">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -44,10 +43,8 @@
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="17">
                     <rect key="frame" x="185" y="115" width="95" height="44"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="44" id="gxb-5h-h5z"/>
-                        <constraint firstAttribute="width" constant="95" id="u9c-JJ-X1e"/>
+                        <constraint firstAttribute="width" constant="95" id="UNn-Uy-6M0"/>
                     </constraints>
                     <state key="normal" title="Cancel all">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -57,19 +54,13 @@
                     </connections>
                 </button>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dG2-Ua-phD">
-                    <rect key="frame" x="141" y="178" width="38" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <rect key="frame" x="141" y="195" width="38" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aQz-7K-c6e">
                     <rect key="frame" x="10" y="257" width="300" height="54"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="54" id="JDv-NF-uHs"/>
-                        <constraint firstAttribute="width" constant="300" id="dx5-Ku-J48"/>
-                    </constraints>
                     <state key="normal" title="Switch to Multiple Downloads">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -77,25 +68,42 @@
                         <action selector="switchToMultipleDownloads:" destination="-1" eventType="touchUpInside" id="jzu-cT-Bj5"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Ac-rg-AkX">
+                    <rect key="frame" x="120" y="428" width="95" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="dLJ-W0-um5"/>
+                        <constraint firstAttribute="width" constant="95" id="isb-iy-u1c"/>
+                    </constraints>
+                    <state key="normal" title="Resume/Pause">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="pauseResumeBtnAction:" destination="-1" eventType="touchUpInside" id="tpX-bm-6HK"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="aQz-7K-c6e" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="10" id="0t3-nE-Tgf"/>
-                <constraint firstItem="17" firstAttribute="height" secondItem="13" secondAttribute="height" id="3jH-Jl-w6d"/>
-                <constraint firstItem="dG2-Ua-phD" firstAttribute="centerX" secondItem="1" secondAttribute="centerX" id="4hL-5t-CGO"/>
-                <constraint firstItem="dG2-Ua-phD" firstAttribute="centerX" secondItem="3" secondAttribute="centerX" id="7JE-nS-jeN"/>
-                <constraint firstItem="dG2-Ua-phD" firstAttribute="top" secondItem="3" secondAttribute="bottom" constant="71" id="AEy-pV-XAl"/>
-                <constraint firstItem="aQz-7K-c6e" firstAttribute="top" secondItem="1" secondAttribute="top" constant="257" id="CBc-Bv-Se5"/>
-                <constraint firstItem="3" firstAttribute="top" secondItem="1" secondAttribute="top" constant="77" id="FvB-de-oZ4"/>
-                <constraint firstItem="13" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="20" id="Nb4-x2-nmJ"/>
-                <constraint firstItem="17" firstAttribute="top" secondItem="3" secondAttribute="bottom" constant="8" id="T8E-1l-xrg"/>
-                <constraint firstAttribute="centerX" secondItem="3" secondAttribute="centerX" id="VE0-5X-ZXe"/>
-                <constraint firstItem="13" firstAttribute="top" secondItem="3" secondAttribute="bottom" constant="8" id="hrc-iq-ahL"/>
-                <constraint firstItem="17" firstAttribute="width" secondItem="13" secondAttribute="width" constant="-33" id="jgF-Fs-z2e"/>
-                <constraint firstAttribute="trailing" secondItem="17" secondAttribute="trailing" constant="40" id="jtS-gn-9L4"/>
+                <constraint firstItem="aQz-7K-c6e" firstAttribute="centerX" secondItem="dG2-Ua-phD" secondAttribute="centerX" id="0Bp-fT-O88"/>
+                <constraint firstItem="dG2-Ua-phD" firstAttribute="centerX" secondItem="3" secondAttribute="centerX" id="5dJ-QC-hdt"/>
+                <constraint firstItem="13" firstAttribute="top" secondItem="17" secondAttribute="top" id="8nC-CF-dgl"/>
+                <constraint firstItem="17" firstAttribute="leading" secondItem="13" secondAttribute="trailing" constant="37" id="Bzz-yn-koj"/>
+                <constraint firstItem="aQz-7K-c6e" firstAttribute="top" secondItem="17" secondAttribute="bottom" constant="98" id="Dsa-HG-XVF"/>
+                <constraint firstItem="13" firstAttribute="leading" secondItem="3" secondAttribute="leading" id="HAS-se-SzZ"/>
+                <constraint firstItem="aQz-7K-c6e" firstAttribute="centerX" secondItem="1" secondAttribute="centerX" id="M4d-31-bll"/>
+                <constraint firstAttribute="bottom" secondItem="3Ac-rg-AkX" secondAttribute="bottom" constant="96" id="QUK-Qt-BNU"/>
+                <constraint firstItem="3Ac-rg-AkX" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="120" id="Wpd-B9-gV9"/>
+                <constraint firstItem="3" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="20" id="cFb-qM-VDW"/>
+                <constraint firstItem="13" firstAttribute="top" secondItem="3" secondAttribute="bottom" constant="8" symbolic="YES" id="f5m-IZ-456"/>
+                <constraint firstItem="dG2-Ua-phD" firstAttribute="top" secondItem="13" secondAttribute="bottom" constant="36" id="ffQ-xh-Pge"/>
+                <constraint firstItem="17" firstAttribute="baseline" secondItem="13" secondAttribute="firstBaseline" id="hlS-s7-mZD"/>
+                <constraint firstItem="aQz-7K-c6e" firstAttribute="centerY" secondItem="1" secondAttribute="centerY" id="j9e-ba-UBz"/>
+                <constraint firstAttribute="trailing" secondItem="17" secondAttribute="trailing" constant="40" id="pQO-ie-L5D"/>
+                <constraint firstItem="13" firstAttribute="baseline" secondItem="17" secondAttribute="firstBaseline" id="pu5-Ag-9Zj"/>
+                <constraint firstItem="aQz-7K-c6e" firstAttribute="top" secondItem="dG2-Ua-phD" secondAttribute="bottom" constant="41" id="vRy-ZC-S6N"/>
+                <constraint firstItem="3" firstAttribute="top" secondItem="1" secondAttribute="top" constant="77" id="xLE-eN-D8N"/>
+                <constraint firstItem="aQz-7K-c6e" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="10" id="zff-3d-tNa"/>
             </constraints>
-            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
-            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
     </objects>
 </document>

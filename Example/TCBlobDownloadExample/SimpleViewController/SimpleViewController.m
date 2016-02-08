@@ -12,6 +12,7 @@
 @implementation SimpleViewController
 
 
+bool resume = false;
 #pragma mark - Init
 
 
@@ -44,6 +45,7 @@
     */
     
     // Blocks
+    // progress = progress*100;
     [self.sharedDownloadManager startDownloadWithURL:[NSURL URLWithString:self.urlField.text]
                                           customPath:[NSString pathWithComponents:@[NSTemporaryDirectory(), @"example"]]
                                        firstResponse:NULL
@@ -51,6 +53,8 @@
                                                 if (remainingTime != -1) {
                                                     [self.remainingTime setText:[NSString stringWithFormat:@"%lds", (long)remainingTime]];
                                                 }
+                                                progress = progress*100;
+                                                NSLog(@"%f", progress);
                                             }
                                                error:^(NSError *error) {
                                                    NSLog(@"%@", error);
@@ -96,6 +100,36 @@
 
 #pragma mark - Utilities
 
+
+- (IBAction)pauseResumeBtnAction:(id)sender {
+    NSLog(@"Click resume");
+    if(resume == true) {
+        [self.sharedDownloadManager startDownloadWithURL:[NSURL URLWithString:self.urlField.text]
+                                              customPath:[NSString pathWithComponents:@[NSTemporaryDirectory(), @"example"]]
+                                           firstResponse:NULL
+                                                progress:^(uint64_t receivedLength, uint64_t totalLength, NSInteger remainingTime, float progress) {
+                                                    if (remainingTime != -1) {
+                                                        [self.remainingTime setText:[NSString stringWithFormat:@"%lds", (long)remainingTime]];
+                                                    }
+                                                    progress = progress*100;
+                                                    NSLog(@"%f %% ", progress);
+                                                }
+                                                   error:^(NSError *error) {
+                                                       NSLog(@"%@", error);
+                                                   }
+                                                complete:^(BOOL downloadFinished, NSString *pathToFile) {
+                                                    NSString *str = downloadFinished ? @"Completed" : @"Cancelled";
+                                                    [self.remainingTime setText:str];
+                                                }];
+        resume = false;
+
+    } else {
+        [self.sharedDownloadManager cancelAllDownloadsAndRemoveFiles:false];
+        resume = true;
+    }
+    
+    
+}
 
 - (void)cancelAll:(id)sender
 {

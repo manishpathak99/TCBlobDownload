@@ -15,10 +15,12 @@
 @property (weak, nonatomic) IBOutlet UITextField *urlField;
 @property (weak, nonatomic) IBOutlet UIButton *downloadButton;
 @property (weak, nonatomic) IBOutlet UIButton *cancelButton;
+@property (weak, nonatomic) IBOutlet UIButton *pauseResumeButton;
 @property (weak, nonatomic) IBOutlet UILabel *remainingTime;
 
 - (IBAction)download:(id)sender;
 - (IBAction)cancelAll:(id)sender;
 - (IBAction)switchToMultipleDownloads:(id)sender;
+- (IBAction)pauseResumeBtnAction:(id)sender;
 
 @end
